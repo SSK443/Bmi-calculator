@@ -27,19 +27,21 @@ function App() {
       alert('Please fill the form');
     }
   };
-const reset=()=>{
-  setBmi('')
-  setHeight('')
-  setWeight('')
-  setMessage('')
-}
+
+  const reset = () => {
+    setBmi(null);
+    setHeight('');
+    setWeight('');
+    setMessage('');
+  };
+
   return (
     <>
       <div className='bg-black w-full h-screen flex justify-center items-center'>
-        <div className='h-fit w-[30vw] bg-green-500 grid grid-cols-1 justify-items-center items-center gap-5 p-5 rounded-lg'>
-          <h1 className='text-5xl font-extrabold text-white'>BMI Calculator</h1>
+        <div className='h-fit w-[90vw] sm:w-[80vw] md:w-[50vw] lg:w-[30vw] bg-green-500 grid grid-cols-1 justify-items-center items-center gap-5 p-5 rounded-lg'>
+          <h1 className='text-3xl md:text-5xl font-extrabold text-white'>BMI Calculator</h1>
           <div className='h-25 bg-black w-[80%] text-white rounded-lg p-4'>
-            <h3 className='text-center text-2xl'>Your BMI: {bmi}</h3>
+            <h3 className='text-center text-xl md:text-2xl'>Your BMI: {bmi}</h3>
             <h4 className='mt-2 text-lg text-center'>{message}</h4>
           </div>
           <input
@@ -56,20 +58,20 @@ const reset=()=>{
             value={weight}
             onChange={e => setWeight(e.target.value)}
           />
-         <div className='flex justify-between items-center gap-5'>
+          <div className='flex justify-between items-center gap-5'>
             <button
-              className='bg-black w-20 h-10 text-white font-semibold rounded-lg text-2xl'
+              className='bg-black w-20 h-10 text-white font-semibold rounded-lg text-xl md:text-2xl'
               onClick={bmiApp}
             >
               Check
             </button>
             <button
-              className='bg-black w-20 h-10 text-white font-semibold rounded-lg text-2xl'
-             onClick={()=>reset()}
+              className='bg-black w-20 h-10 text-white font-semibold rounded-lg text-xl md:text-2xl'
+              onClick={reset}
             >
               Reset
             </button>
-         </div>
+          </div>
         </div>
       </div>
     </>
